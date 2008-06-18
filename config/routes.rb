@@ -1,13 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
-  map.login '/login', :controller => 'sessions', :action => 'new'
-  map.register '/register', :controller => 'people', :action => 'create'
-  map.signup '/signup', :controller => 'people', :action => 'new'
-  map.activate '/activate/:activation_code', :controller => 'people', :action => 'activate', :activation_code => nil
-  map.resources :peoples
-
-  map.resource :session
-
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
