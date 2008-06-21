@@ -1,7 +1,4 @@
 class PeopleController < ApplicationController
-  # Be sure to include AuthenticationSystem in Application Controller instead
-  include AuthenticatedSystem
-  
   # Protect these actions behind an admin login
   # before_filter :admin_required, :only => [:suspend, :unsuspend, :destroy, :purge]
   before_filter :find_person, :only => [:suspend, :unsuspend, :destroy, :purge]

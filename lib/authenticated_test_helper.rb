@@ -1,7 +1,16 @@
 module AuthenticatedTestHelper
   # Sets the current person in the session from the person fixtures.
   def login_as(person)
-    @request.session[:person_id] = person ? people(person).id : nil
+    @request.session[:person_id] = case person
+    when String, Symbol
+      people(person).id
+    when Person
+      person.id
+    when Integer
+      person
+    else
+      nil
+    end
   end
 
   def authorize_as(person)
