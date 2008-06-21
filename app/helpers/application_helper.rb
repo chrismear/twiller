@@ -90,4 +90,14 @@ module ApplicationHelper
       link_to_login_with_IP content_text, options
     end
   end
+  
+  def standard_flashes
+    output = ""
+    [:error, :notice].each do |kind|
+      unless flash[kind].blank?
+        output += content_tag(:div, flash[kind], :class => kind.to_s)
+      end
+    end
+    output
+  end
 end

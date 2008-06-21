@@ -8,6 +8,7 @@ steps_for(:ra_navigation) do
   When "$actor goes to $path" do |actor, path|
     case path
     when 'the home page' then get '/'
+    when '/logout' then delete '/logout'
     else                      get path
     end
   end
