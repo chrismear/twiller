@@ -47,9 +47,10 @@ Rails::Initializer.run do |config|
   # If you change this key, all old sessions will become invalid!
   # Make sure the secret is at least 30 characters and all random, 
   # no regular words or you'll be exposed to dictionary attacks.
+  require 'cookie_store_secret'
   config.action_controller.session = {
     :session_key => '_twiller_session',
-    :secret      => '697922c94adede0a9426b5f941c9f6ed87d0f7af4ff7a1262b6bbc47f7a78fa85349b8f619166e126727ecca4e56cff0e1266aac7cabbd9f1ee57f90b50d323e'
+    :secret      => COOKIE_STORE_SECRET
   }
 
   # Use the database for sessions instead of the cookie-based default,
