@@ -18,3 +18,5 @@ module AuthenticatedTestHelper
     person
   end  
 end
+
+REST_AUTH_SITE_KEY         = 'b048052245c915d3ca8e114307f3da8b50ef7eb4'
