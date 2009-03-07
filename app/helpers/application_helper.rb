@@ -2,7 +2,7 @@
 module ApplicationHelper
   def standard_flashes
     output = ""
-    [:error, :notice].each do |kind|
+    [:success, :error, :notice].each do |kind|
       unless flash[kind].blank?
         output += content_tag(:div, flash[kind], :class => kind.to_s)
       end

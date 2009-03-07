@@ -1,0 +1,19 @@
+<h1>New person</h1>
+<%= error_messages_for :person -%>
+<% form_for(:person, :url => people_path) do |f| -%>
+  <p>
+    <%= f.label(:login) %><br />
+    <%= f.text_field(:login) %>
+  </p>
+  <p>
+    <%= f.label(:password) %><br />
+    <%= f.password_field(:password) %>
+  </p>
+  <p>
+    <%= f.label(:password_confirmation) %><br />
+    <%= f.password_field(:password_confirmation) %>
+  </p>
+  <p>
+    <%= submit_tag("Sign up") %>
+  </p>
+<% end -%>

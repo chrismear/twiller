@@ -7,6 +7,16 @@
 </head>
 
 <body>
+  <div id="accountbar">
+    <p>
+      <% if logged_in? -%>
+        Logged in as <%= link_to(h(current_person.login), person_path(current_person)) %> | <%= link_to("Log out", session_path, :method => :delete) %>
+      <% else -%>
+        <%= link_to("Log in", new_session_path) %> | <%= link_to("Sign up", new_person_path) %>
+      <% end -%>
+    </p>
+  </div>
+  <%= standard_flashes %>
   <%= yield %>
 </body>
 </html>
