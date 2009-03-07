@@ -2,3 +2,4 @@ log/*
 db/*.sqlite3
 config/initializers/site_keys.rb
 config/cookie_store_secret.rb
+.DS_Store
